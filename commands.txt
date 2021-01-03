@@ -1,0 +1,7 @@
+ter len 0
+show runn
+show vlan
+sh version
+sh inter status
+ter len 40
+

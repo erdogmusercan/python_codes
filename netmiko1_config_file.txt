@@ -1,0 +1,12 @@
+
+conf t
+vlan 1996
+name Finco_IT
+vlan 1997
+name Finco_SEC
+vlan 1998
+nane Finco_LB
+vlan 1999
+name Finco_Backup
+end
+copy runn start
