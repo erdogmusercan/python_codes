@@ -1,0 +1,453 @@
+
+ter len 0
+Cisco NX-OS Software
+Copyright (c) 2002-2017, Cisco Systems, Inc. All rights reserved.
+NX-OSv9K software ("NX-OSv9K Software") and related documentation,
+files or other reference materials ("Documentation") are
+the proprietary property and confidential information of Cisco
+Systems, Inc. ("Cisco") and are protected, without limitation,
+pursuant to United States and International copyright and trademark
+laws in the applicable jurisdiction which provide civil and criminal
+penalties for copying or distribution without Cisco's authorization.
+
+Any use or disclosure, in whole or in part, of the NX-OSv9K Software
+or Documentation to any third party for any purposes is expressly
+prohibited except as otherwise authorized by Cisco in writing.
+The copyrights to certain works contained herein are owned by other
+third parties and are used and distributed under license. Some parts
+of this software may be covered under the GNU Public License or the
+GNU Lesser General Public License. A copy of each such license is
+available at
+http://www.gnu.org/licenses/gpl.html and
+http://www.gnu.org/licenses/lgpl.html
+***************************************************************************
+*  NX-OSv9K is strictly limited to use for evaluation, demonstration      *
+*  and NX-OS education. Any use or disclosure, in whole or in part of     *
+*  the NX-OSv9K Software or Documentation to any third party for any      *
+*  purposes is expressly prohibited except as otherwise authorized by     *
+*  Cisco in writing.                                                      *
+***************************************************************************
+SW2# ter len 0
+SW2# show runn
+
+!Command: show running-config
+!Time: Fri Jan  1 21:03:31 2021
+
+version 7.0(3)I5(2)
+power redundancy-mode combined force
+
+hostname SW2
+vdc SW2 id 1
+  limit-resource vlan minimum 16 maximum 4094
+  limit-resource vrf minimum 2 maximum 4096
+  limit-resource port-channel minimum 0 maximum 511
+  limit-resource u4route-mem minimum 248 maximum 248
+  limit-resource u6route-mem minimum 96 maximum 96
+  limit-resource m4route-mem minimum 58 maximum 58
+  limit-resource m6route-mem minimum 8 maximum 8
+
+feature telnet
+
+no password strength-check
+username admin password 5 $5$HMKDGF$0yEg5w5S4gs/PwBBBmsFU6wqPbiRybIcf.E.UHdZNi/  role network-admin
+ip domain-lookup
+snmp-server user admin network-admin auth md5 0x842513228c8296cb56d32aa77c5c91ed priv 0x842513228c8296cb56d32aa77c5c91ed localizedkey
+rmon event 1 description FATAL(1) owner PMON@FATAL
+rmon event 2 description CRITICAL(2) owner PMON@CRITICAL
+rmon event 3 description ERROR(3) owner PMON@ERROR
+rmon event 4 description WARNING(4) owner PMON@WARNING
+rmon event 5 description INFORMATION(5) owner PMON@INFO
+
+vlan 1,100-120,1996-1999
+vlan 100
+  name Python_Vlan100
+vlan 101
+  name Python_Vlan101
+vlan 102
+  name Python_Vlan102
+vlan 103
+  name Python_Vlan103
+vlan 104
+  name Python_Vlan104
+vlan 105
+  name Python_Vlan105
+vlan 106
+  name Python_Vlan106
+vlan 107
+  name Python_Vlan107
+vlan 108
+  name Python_Vlan108
+vlan 109
+  name Python_Vlan109
+vlan 110
+  name Python_Vlan110
+vlan 111
+  name Python_Vlan111
+vlan 112
+  name Python_Vlan112
+vlan 113
+  name Python_Vlan113
+vlan 114
+  name Python_Vlan114
+vlan 115
+  name Python_Vlan115
+vlan 116
+  name Python_Vlan116
+vlan 117
+  name Python_Vlan117
+vlan 118
+  name Python_Vlan118
+vlan 119
+  name Python_Vlan119
+vlan 120
+  name Python_Vlan120
+vlan 1996
+  name Finco_IT
+vlan 1997
+  name Finco_SEC
+vlan 1999
+  name Finco_Backup
+
+ip prefix-list adem seq 10 permit 1.1.1.1/32 
+vrf context management
+
+
+interface Ethernet1/1
+
+interface Ethernet1/2
+
+interface Ethernet1/3
+
+interface Ethernet1/4
+
+interface Ethernet1/5
+
+interface Ethernet1/6
+
+interface Ethernet1/7
+
+interface Ethernet1/8
+
+interface Ethernet1/9
+
+interface Ethernet1/10
+
+interface Ethernet1/11
+
+interface Ethernet1/12
+
+interface Ethernet1/13
+
+interface Ethernet1/14
+
+interface Ethernet1/15
+
+interface Ethernet1/16
+
+interface Ethernet1/17
+
+interface Ethernet1/18
+
+interface Ethernet1/19
+
+interface Ethernet1/20
+
+interface Ethernet1/21
+
+interface Ethernet1/22
+
+interface Ethernet1/23
+
+interface Ethernet1/24
+
+interface Ethernet1/25
+
+interface Ethernet1/26
+
+interface Ethernet1/27
+
+interface Ethernet1/28
+
+interface Ethernet1/29
+
+interface Ethernet1/30
+
+interface Ethernet1/31
+
+interface Ethernet1/32
+
+interface Ethernet1/33
+
+interface Ethernet1/34
+
+interface Ethernet1/35
+
+interface Ethernet1/36
+
+interface Ethernet1/37
+
+interface Ethernet1/38
+
+interface Ethernet1/39
+
+interface Ethernet1/40
+
+interface Ethernet1/41
+
+interface Ethernet1/42
+
+interface Ethernet1/43
+
+interface Ethernet1/44
+
+interface Ethernet1/45
+
+interface Ethernet1/46
+
+interface Ethernet1/47
+
+interface Ethernet1/48
+
+interface Ethernet1/49
+
+interface Ethernet1/50
+
+interface Ethernet1/51
+
+interface Ethernet1/52
+
+interface Ethernet1/53
+
+interface Ethernet1/54
+
+interface Ethernet1/55
+
+interface Ethernet1/56
+
+interface Ethernet1/57
+
+interface Ethernet1/58
+
+interface Ethernet1/59
+
+interface Ethernet1/60
+
+interface Ethernet1/61
+
+interface Ethernet1/62
+
+interface Ethernet1/63
+
+interface Ethernet1/64
+
+interface mgmt0
+  vrf member management
+  ip address 192.168.1.102/24
+line console
+line vty
+boot nxos bootflash:/nxos.7.0.3.I5.2.bin 
+ip route 0.0.0.0/0 192.168.1.1 vrf management
+
+
+SW2# show vlan
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Eth1/1, Eth1/2, Eth1/3, Eth1/4
+                                                Eth1/5, Eth1/6, Eth1/7, Eth1/8
+                                                Eth1/9, Eth1/10, Eth1/11
+                                                Eth1/12, Eth1/13, Eth1/14
+                                                Eth1/15, Eth1/16, Eth1/17
+                                                Eth1/18, Eth1/19, Eth1/20
+                                                Eth1/21, Eth1/22, Eth1/23
+                                                Eth1/24, Eth1/25, Eth1/26
+                                                Eth1/27, Eth1/28, Eth1/29
+                                                Eth1/30, Eth1/31, Eth1/32
+                                                Eth1/33, Eth1/34, Eth1/35
+                                                Eth1/36, Eth1/37, Eth1/38
+                                                Eth1/39, Eth1/40, Eth1/41
+                                                Eth1/42, Eth1/43, Eth1/44
+                                                Eth1/45, Eth1/46, Eth1/47
+                                                Eth1/48, Eth1/49, Eth1/50
+                                                Eth1/51, Eth1/52, Eth1/53
+                                                Eth1/54, Eth1/55, Eth1/56
+                                                Eth1/57, Eth1/58, Eth1/59
+                                                Eth1/60, Eth1/61, Eth1/62
+                                                Eth1/63, Eth1/64
+100  Python_Vlan100                   active    
+101  Python_Vlan101                   active    
+102  Python_Vlan102                   active    
+103  Python_Vlan103                   active    
+104  Python_Vlan104                   active    
+105  Python_Vlan105                   active    
+106  Python_Vlan106                   active    
+107  Python_Vlan107                   active    
+108  Python_Vlan108                   active    
+109  Python_Vlan109                   active    
+110  Python_Vlan110                   active    
+111  Python_Vlan111                   active    
+112  Python_Vlan112                   active    
+113  Python_Vlan113                   active    
+114  Python_Vlan114                   active    
+115  Python_Vlan115                   active    
+116  Python_Vlan116                   active    
+117  Python_Vlan117                   active    
+118  Python_Vlan118                   active    
+119  Python_Vlan119                   active    
+120  Python_Vlan120                   active    
+1996 Finco_IT                         active    
+1997 Finco_SEC                        active    
+1998 VLAN1998                         active    
+1999 Finco_Backup                     active    
+
+VLAN Type         Vlan-mode
+---- -----        ----------
+1    enet         CE     
+100  enet         CE     
+101  enet         CE     
+102  enet         CE     
+103  enet         CE     
+104  enet         CE     
+105  enet         CE     
+106  enet         CE     
+107  enet         CE     
+108  enet         CE     
+109  enet         CE     
+110  enet         CE     
+111  enet         CE     
+112  enet         CE     
+113  enet         CE     
+114  enet         CE     
+115  enet         CE     
+116  enet         CE     
+117  enet         CE     
+118  enet         CE     
+119  enet         CE     
+120  enet         CE     
+1996 enet         CE     
+1997 enet         CE     
+1998 enet         CE     
+1999 enet         CE     
+
+Remote SPAN VLANs
+-------------------------------------------------------------------------------
+
+Primary  Secondary  Type             Ports
+-------  ---------  ---------------  -------------------------------------------
+
+
+
+SW2# sh version
+Cisco Nexus Operating System (NX-OS) Software
+TAC support: http://www.cisco.com/tac
+Documents: http://www.cisco.com/en/US/products/ps9372/tsd_products_support_series_home.html
+Copyright (c) 2002-2017, Cisco Systems, Inc. All rights reserved.
+The copyrights to certain works contained herein are owned by
+other third parties and are used and distributed under license.
+Some parts of this software are covered under the GNU Public
+License. A copy of the license is available at
+http://www.gnu.org/licenses/gpl.html.
+
+NX-OSv9K is a demo version of the Nexus Operating System
+
+Software
+  BIOS: version 
+  NXOS: version 7.0(3)I5(2)
+  BIOS compile time:  
+  NXOS image file is: bootflash:///nxos.7.0.3.I5.2.bin
+  NXOS compile time:  2/16/2017 8:00:00 [02/16/2017 17:03:27]
+
+
+Hardware
+  cisco NX-OSv Chassis 
+   with 8165356 kB of memory.
+  Processor Board ID 9F4MVRL0X6M
+
+  Device name: SW2
+  bootflash:    3509454 kB
+Kernel uptime is 0 day(s), 10 hour(s), 15 minute(s), 38 second(s)
+
+Last reset 
+  Reason: Unknown
+  System version: 
+  Service: 
+
+plugin
+  Core Plugin, Ethernet Plugin
+
+Active Package(s):
+sh inter status
+        
+SW2# sh inter status
+
+--------------------------------------------------------------------------------
+Port          Name               Status    Vlan      Duplex  Speed   Type
+--------------------------------------------------------------------------------
+mgmt0         --                 connected routed    full    1000    --         
+Eth1/1        --                 connected 1         full    1000    10g        
+Eth1/2        --                 connected 1         full    1000    10g        
+Eth1/3        --                 connected 1         full    1000    10g        
+Eth1/4        --                 connected 1         full    1000    10g        
+Eth1/5        --                 connected 1         full    1000    10g        
+Eth1/6        --                 connected 1         full    1000    10g        
+Eth1/7        --                 connected 1         full    1000    10g        
+Eth1/8        --                 notconnec 1         auto    auto    10g        
+Eth1/9        --                 notconnec 1         auto    auto    10g        
+Eth1/10       --                 notconnec 1         auto    auto    10g        
+Eth1/11       --                 notconnec 1         auto    auto    10g        
+Eth1/12       --                 notconnec 1         auto    auto    10g        
+Eth1/13       --                 notconnec 1         auto    auto    10g        
+Eth1/14       --                 notconnec 1         auto    auto    10g        
+Eth1/15       --                 notconnec 1         auto    auto    10g        
+Eth1/16       --                 notconnec 1         auto    auto    10g        
+Eth1/17       --                 notconnec 1         auto    auto    10g        
+Eth1/18       --                 notconnec 1         auto    auto    10g        
+Eth1/19       --                 notconnec 1         auto    auto    10g        
+Eth1/20       --                 notconnec 1         auto    auto    10g        
+Eth1/21       --                 notconnec 1         auto    auto    10g        
+Eth1/22       --                 notconnec 1         auto    auto    10g        
+Eth1/23       --                 notconnec 1         auto    auto    10g        
+Eth1/24       --                 notconnec 1         auto    auto    10g        
+Eth1/25       --                 notconnec 1         auto    auto    10g        
+Eth1/26       --                 notconnec 1         auto    auto    10g        
+Eth1/27       --                 notconnec 1         auto    auto    10g        
+Eth1/28       --                 notconnec 1         auto    auto    10g        
+Eth1/29       --                 notconnec 1         auto    auto    10g        
+Eth1/30       --                 notconnec 1         auto    auto    10g        
+Eth1/31       --                 notconnec 1         auto    auto    10g        
+Eth1/32       --                 notconnec 1         auto    auto    10g        
+Eth1/33       --                 notconnec 1         auto    auto    10g        
+Eth1/34       --                 notconnec 1         auto    auto    10g        
+Eth1/35       --                 notconnec 1         auto    auto    10g        
+Eth1/36       --                 notconnec 1         auto    auto    10g        
+Eth1/37       --                 notconnec 1         auto    auto    10g        
+Eth1/38       --                 notconnec 1         auto    auto    10g        
+Eth1/39       --                 notconnec 1         auto    auto    10g        
+Eth1/40       --                 notconnec 1         auto    auto    10g        
+Eth1/41       --                 notconnec 1         auto    auto    10g        
+Eth1/42       --                 notconnec 1         auto    auto    10g        
+Eth1/43       --                 notconnec 1         auto    auto    10g        
+Eth1/44       --                 notconnec 1         auto    auto    10g        
+Eth1/45       --                 notconnec 1         auto    auto    10g        
+Eth1/46       --                 notconnec 1         auto    auto    10g        
+Eth1/47       --                 notconnec 1         auto    auto    10g        
+Eth1/48       --                 notconnec 1         auto    auto    10g        
+Eth1/49       --                 notconnec 1         auto    auto    10g        
+Eth1/50       --                 notconnec 1         auto    auto    10g        
+Eth1/51       --                 notconnec 1         auto    auto    10g        
+Eth1/52       --                 notconnec 1         auto    auto    10g        
+Eth1/53       --                 notconnec 1         auto    auto    10g        
+Eth1/54       --                 notconnec 1         auto    auto    10g        
+Eth1/55       --                 notconnec 1         auto    auto    10g        
+Eth1/56       --                 notconnec 1         auto    auto    10g        
+Eth1/57       --                 notconnec 1         auto    auto    10g        
+Eth1/58       --                 notconnec 1         auto    auto    10g        
+Eth1/59       --                 notconnec 1         auto    auto    10g        
+Eth1/60       --                 notconnec 1         auto    auto    10g        
+Eth1/61       --                 notconnec 1         auto    auto    10g        
+Eth1/62       --                 notconnec 1         auto    auto    10g        
+Eth1/63       --                 notconnec 1         auto    auto    10g        
+Eth1/64       --                 notconnec 1         auto    auto    10g        
+SW2# ter len 40
+SW2# 
+SW2# 
