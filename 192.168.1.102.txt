@@ -27,8 +27,12 @@ http://www.gnu.org/licenses/lgpl.html
 *  purposes is expressly prohibited except as otherwise authorized by     *
 *  Cisco in writing.                                                      *
 ***************************************************************************
-SW2# ter len 0
-SW2# show runn
+
+SW2# ter len 0
+
+
+SW2# show runn
+
 
 !Command: show running-config
 !Time: Fri Jan  1 21:03:31 2021
@@ -102,11 +106,11 @@ vlan 119
 vlan 120
   name Python_Vlan120
 vlan 1996
-  name Finco_IT
+  name Test_IT
 vlan 1997
-  name Finco_SEC
+  name Test_SEC
 vlan 1999
-  name Finco_Backup
+  name Test_Backup
 
 ip prefix-list adem seq 10 permit 1.1.1.1/32 
 vrf context management
@@ -249,7 +253,9 @@ boot nxos bootflash:/nxos.7.0.3.I5.2.bin
 ip route 0.0.0.0/0 192.168.1.1 vrf management
 
 
-SW2# show vlan
+
+SW2# show vlan
+
 
 VLAN Name                             Status    Ports
 ---- -------------------------------- --------- -------------------------------
@@ -295,10 +301,10 @@ VLAN Name                             Status    Ports
 118  Python_Vlan118                   active    
 119  Python_Vlan119                   active    
 120  Python_Vlan120                   active    
-1996 Finco_IT                         active    
-1997 Finco_SEC                        active    
+1996 Test_IT                          active    
+1997 Test_SEC                         active    
 1998 VLAN1998                         active    
-1999 Finco_Backup                     active    
+1999 Test_Backup                      active    
 
 VLAN Type         Vlan-mode
 ---- -----        ----------
@@ -337,7 +343,9 @@ Primary  Secondary  Type             Ports
 
 
 
-SW2# sh version
+
+SW2# sh version
+
 Cisco Nexus Operating System (NX-OS) Software
 TAC support: http://www.cisco.com/tac
 Documents: http://www.cisco.com/en/US/products/ps9372/tsd_products_support_series_home.html
@@ -378,7 +386,9 @@ plugin
 Active Package(s):
 sh inter status
         
-SW2# sh inter status
+
+SW2# sh inter status
+
 
 --------------------------------------------------------------------------------
 Port          Name               Status    Vlan      Duplex  Speed   Type
@@ -448,6 +458,11 @@ Eth1/61       --                 notconnec 1         auto    auto    10g
 Eth1/62       --                 notconnec 1         auto    auto    10g        
 Eth1/63       --                 notconnec 1         auto    auto    10g        
 Eth1/64       --                 notconnec 1         auto    auto    10g        
-SW2# ter len 40
-SW2# 
-SW2# 
+
+SW2# ter len 40
+
+
+SW2# 
+
+
+SW2# 
