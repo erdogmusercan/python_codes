@@ -17,7 +17,7 @@ for i in HOST:
 
 	tn.write(b"conf t\n")
 	tn.write(b"vlan 1972\n")
-	tn.write(b"name Finco\n")
+	tn.write(b"name Test\n")
 	tn.write(b"end\n")
 	tn.write(b"copy runn start\n")
 	tn.write(b"exit\n")
