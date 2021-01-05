@@ -1,1 +1,1 @@
-# python
+Python code ornekleri
